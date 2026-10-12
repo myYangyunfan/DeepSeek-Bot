@@ -30,6 +30,7 @@ All notable changes to DS Bot are listed here. The format follows [Keep a Change
 - Deleting a Bot or group chat also removes its scheduled tasks, including ones left on the Bot's earlier chat parts. Before, armed tasks stayed active and kept running the deleted Session; the archive that would have stopped them was refused and the failure was silent.
 - A long conversation's fresh part keeps the Bot's model and thinking level. Before, the new part fell back to the default model.
 - A provider adapter that cannot measure tokens no longer fails every turn. The context size is estimated instead, with one warning in the log.
+- When the recent errors were too long for **Report on GitHub**, the new issue got no diagnostics at all. Now it keeps the versions, the system and the models, and only the errors go by the clipboard.
 - The memory panel's summary works on models that think by default. The call asks for the model's lowest thinking level, and when the answer is cut off at the output limit it is written once more with a larger budget instead of failing or being saved half-written.
 - A message sent to a group chat while a round is running joins that round before the next member speaks. Everyone still to speak sees it, and the members it is for answer it in the same round. Before, it waited for the whole round to end. A message with images or a referenced conversation still waits for its own round.
 
@@ -96,9 +97,9 @@ If you used the legacy `dsh-bot` package, remove it before you install `ds-bot`.
 ### Known limitations
 
 - Tested with DSH `0.2.1-alpha.1`, mainly on Linux and in DSH Web. DSH is an alpha, and a newer DSH can break the plugin.
-- The Bot browser is in DSH Desktop only, and Bots can only read pages ([Bot browser](ds-bot/README.md#bot-browser)).
-- Secrets are stored without encryption, and only exact copies of a value are hidden ([Secrets](ds-bot/README.md#secrets)).
-- Only one DSH can change a team at a time; a second DSH on the same DSH home opens it read-only ([Data and backups](ds-bot/README.md#data-and-backups)).
+- The Bot browser is in DSH Desktop only, and Bots can only read pages ([Bot browser](README.md#bot-browser)).
+- Secrets are stored without encryption, and only exact copies of a value are hidden ([Secrets](README.md#secrets)).
+- Only one DSH can change a team at a time; a second DSH on the same DSH home opens it read-only ([Data and backups](README.md#data-and-backups)).
 - Group chats use many tokens: each member reads the group and answers in turn.
 
 [Unreleased]: https://github.com/Fei2411/DeepSeek-Bot/compare/v0.1.2...HEAD
