@@ -1,10 +1,10 @@
-# AGENTS.md
+﻿# AGENTS.md
 
 Instructions for AI coding agents that work on this repository. Human contributors: see [CONTRIBUTING.md](CONTRIBUTING.md), which has the same rules with more detail.
 
 ## What this project is
 
-DS Bot (`ds-bot/`) is a plugin for DeepSeek Harness (DSH). It turns DSH Desktop and DSH Web into a team of long-lived Bots:
+DS Bot (`./`) is a plugin for DeepSeek Harness (DSH). It turns DSH Desktop and DSH Web into a team of long-lived Bots:
 
 - Every Bot is a DSH Session and runs through the normal DSH agent loop, tools and model routes.
 - The team works together: Bots message each other, share group chats and can see what the other Bots are doing. Each Bot still runs on its own and does not disturb the others.
@@ -22,11 +22,11 @@ DS Bot (`ds-bot/`) is a plugin for DeepSeek Harness (DSH). It turns DSH Desktop 
 
 ## Commands
 
-Run in `ds-bot/`. The tests need a DeepSeek Harness checkout at `../deepseek-harness` (or `DSH_HARNESS`), at the DSH version in the README.
+Run in `./`. The tests need a DeepSeek Harness checkout at `../deepseek-harness` (or `DSH_HARNESS`), at the DSH version in the README.
 
 ```sh
 npm ci                                 # build tool only (esbuild)
-npm run build                          # src/client → client.js
+npm run build                          # src/client 鈫?client.js
 npm test                               # unit tests; also fail if client.js is stale
 node scripts/build-client.mjs --check  # client.js matches src/client
 CONTEXT_WINDOW=100000 CHECK_RATIO=0.45 dev/bench.sh smoke 3096 8796 reset && node dev/smoke.mjs smoke 3096   # smoke test
@@ -48,3 +48,4 @@ A change is done when `npm test` and the `--check` pass. Run the smoke test as w
 - Write a comment only when the reason is not clear from the code: a hidden constraint, an invariant, a workaround. Do not describe what the code does.
 - Commit messages in English, imperative subject, the reason in the body. Keep commits small.
 - User-facing text in the plugin is English. Keep the README and README.zh.md in step when you change one of them.
+
